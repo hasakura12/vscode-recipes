@@ -20,18 +20,19 @@
       "type": "node",
       "request": "launch",
       "name": "Launch in Docker",
-      "preLaunchTask": "tsc-watch",
       "protocol": "auto",
+      // "preLaunchTask": "tsc-watch",
       "runtimeExecutable": "npm",
       "runtimeArgs": [ "run", "docker-debug" ],
-      "port": 5858,
+      "address": "localhost", // specify a remote host
+      "port": 9223,
       "restart": true,
-      "timeout": 60000,
-      "localRoot": "${workspaceFolder}/dist",
-      "remoteRoot": "/server/dist",
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ],
+      "timeout": 20000,
+      // "localRoot": "${workspaceFolder}/dist",
+      // "remoteRoot": "/server/dist",
+      // "outFiles": [
+      //   "${workspaceFolder}/dist/**/*.js"
+      // ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -39,9 +40,8 @@
       "type": "node",
       "request": "attach",
       "name": "Attach to Docker",
-      "preLaunchTask": "tsc-watch",
       "protocol": "auto",
-      "port": 5858,
+      "port": 9223,
       "restart": true,
       "localRoot": "${workspaceFolder}/dist",
       "remoteRoot": "/server/dist",
@@ -61,7 +61,8 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": [ "run", "debug" ],
       "restart": true,
-      "port": 5858,
+      "port": 9223,
+      "runtimeVersion": "12.0.0",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "outFiles": [

@@ -8,4 +8,4 @@ services:
       - ./dist:/server/dist
     ports:
       - "3000:3000"
-      - "5858:5858"
+      - "9223:9223"
